@@ -1,6 +1,6 @@
 //Registro de usuario con ciclos
 
-/*function registro (){
+function registro (){
     for (let i = 1; i <= 8; i++){
         let nombre = prompt ("Ingrese su nombre");
         let apellido = prompt ("Ingrese su apellido");
@@ -35,11 +35,11 @@ let cuotas = parseFloat(prompt("Ingrese cantidad de cuotas"));
 let envio = 5000;
 
 calcular (precio, envio, cuotas);
-alert ("Gracias por su compra");*/
+alert ("Gracias por su compra");
 
 //Objeto
 
-/*class tienda{
+class tienda{
     constructor(nombre, precio){
         this.nombre = nombre;
         this.precio = precio;
@@ -52,12 +52,12 @@ const samsung = new tienda ("Samsung Galaxy S22 Ultra", 268000);
 
 console.log(iphone1);
 console.log(moto1);
-console.log(samsung);*/
+console.log(samsung);
 
 //Desafio
 
 let productos = [
-    {nombre: "Iphone 11 " , precio: 230000 },
+    {nombre: "Iphone 11" , precio: 230000 },
     {nombre: "Iphone 12" , precio: 530000 },
     {nombre: "Iphone 13" , precio: 380000 },
     {nombre: "Motorola G200" , precio: 110000 },
@@ -68,15 +68,10 @@ let productos = [
     {nombre: "Samsung Galaxy Z Fold 4" , precio: 410000 },
 ];
 
-let ingrese = prompt("Ingrese el nombre del producto");
-let producto = productos.find(item => item.nombre === ingrese);
+for (let producto of productos){
+    let ingrese = prompt("Ingrese el nombre del producto");
+    let producto = productos.find(item => item.nombre === ingrese);
 
-let mensaje = `El producto seleccionado es ${producto.nombre} y cuesta ${producto.precio} AR$`;
-alert(mensaje);
-
-/*
-const buscador = productos.map(item => item.nombre === "Motorola G200");
-console.log(buscador);
-
-const precioMenor = productos.filter(item => item.precio < 250000);
-console.log(precioMenor);*/
+    let mensaje = `El producto seleccionado es ${producto.nombre} y cuesta ${producto.precio} AR$`;
+    alert(mensaje);
+};
