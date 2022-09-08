@@ -1,5 +1,5 @@
 //Registro de usuario con ciclos
-/*
+
 function registro (){
     for (let i = 1; i <= 8; i++){
         let nombre = prompt ("Ingrese su nombre");
@@ -53,7 +53,7 @@ const samsung = new tienda ("Samsung Galaxy S22 Ultra", 268000);
 console.log(iphone1);
 console.log(moto1);
 console.log(samsung);
-*/
+
 //Desafio
 
 let productos = [
