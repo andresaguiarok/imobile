@@ -29,6 +29,11 @@ header{
 
 }
 
+.logoNav {
+    width: 280px;
+    height: 60px;
+}
+
 .pie {
     background-image: url(../images/wallpapers/imagen_menu);
     width: 100%;
@@ -72,6 +77,6 @@ header{
 }
 
 .contenedor {
-    padding: 30px;
+    padding: 28px;
     background-color: rgba(128, 128, 128, 0.096);
 }
