@@ -9,8 +9,15 @@ for (let producto of productos) {
                             <div class="card-body">
                                 <h5 class="card-title text-center">${producto.nombre}</h5>
                                 <p class="card-text text-center">Precio: ${producto.precio}$</p>
-                                <a href="#" class="btn btn-primary" id="boton"${producto.id}>Añadir al carrito</a>
+                                <a class="btn btn-primary" id=boton${producto.id}>Añadir al carrito</a>
                             </div>
                             </div>`
      contenedor.append(div)
-}
+
+     let boton = document.getElementById (`boton${producto.id}`)
+     boton.addEventListener("click" , () => {
+        alert(`El producto ${producto.nombre} se agrego al carrito`)
+     });
+    
+    
+};

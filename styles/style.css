@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+header{
+    display: flex;
+    flex-direction: row;
+}
+
 .menu {
     background-image: url(../images/wallpapers/imagen_menu);
     font-size: 20px;
@@ -35,14 +40,19 @@
     justify-items: center;
 }
 
-.redes img {
+.redesInsta img {
     width: 80px;
     height: 80px;
 }
 
+.redesFace img {
+    width: 74px;
+    height: 74px;
+}
+
 .logo img {
     width: 250px;
-    height: 77px;
+    height: 70px;
 }
 
 .tienda {
@@ -60,7 +70,8 @@
     margin: 15px;
     background-color: rgba(0, 0, 27, 0.158);
 }
+
 .contenedor {
-    padding: 40px;
+    padding: 30px;
     background-color: rgba(128, 128, 128, 0.096);
 }
