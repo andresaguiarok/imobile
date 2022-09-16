@@ -43,6 +43,8 @@ header{
     flex-direction: row;
     justify-content: space-around;
     justify-items: center;
+    cursor: pointer;
+    position: absolute;
 }
 
 .redesInsta img {
@@ -79,4 +81,29 @@ header{
 .contenedor {
     padding: 28px;
     background-color: rgba(128, 128, 128, 0.096);
+}
+
+.carrito {
+    display: flex;
+    justify-content: end;
+    justify-items: end;
+    margin: 5px;
+    padding: 5px;
+}
+
+.carrito button {
+    width: 70px;
+    height: 70px;
+    border-radius: 300px;
+}
+.carrito button img {
+    display: flex;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+
+}
+
+#boton {
+    cursor: pointer;
 }
