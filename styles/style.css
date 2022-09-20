@@ -1,6 +1,8 @@
 *{
     padding: 0;
     margin: 0;
+
+    font-family: 'Exo 2', sans-serif;
 }
 
 header{
@@ -78,6 +80,10 @@ header{
     background-color: rgba(0, 0, 27, 0.158);
 }
 
+.card img{
+    border-radius: 10px;
+}
+
 .contenedor {
     padding: 28px;
     background-color: rgba(128, 128, 128, 0.096);
@@ -91,12 +97,13 @@ header{
     padding: 5px;
 }
 
-.carrito button {
+.carrito .icon {
     width: 70px;
     height: 70px;
     border-radius: 300px;
 }
-.carrito button img {
+
+.carrito img {
     display: flex;
     justify-content: center;
     width: 40px;
@@ -106,4 +113,18 @@ header{
 
 #boton {
     cursor: pointer;
+}
+
+.productoCarrito {
+    display: flex;
+    flex-direction: column;
+}
+
+.productoCarrito img {
+    width: 150px;
+    height: 150px;
+}
+
+.botoncito {
+    text-align: center;
 }

@@ -6,22 +6,21 @@ for (let producto of productos) {
     let div = document.createElement ("div");
     
     div.innerHTML = `<div class="card" style="width: 20rem;">
-                            <h5 class="card-title text-center">${producto.categoria}</h5>
-                            <img src="${producto.img}" class="card-img-top" alt="...">
+                            <h5 class="card-title text-center p-2">${producto.categoria}</h5>
+                            <img src="${producto.img}" class="card-img-top p-1" alt="...">
                             <div class="card-body d-grid gap-2 ">
                                 <h5 class="card-title text-center">${producto.nombre}</h5>
                                 <h6 class="card-text text-center">Precio: ${producto.precio}$</h6>
-                                <button class="btn btn-primary" id=boton${producto.id}>Añadir al carrito</button>
+                                <button class="btn btn-primary botoncito" id=boton${producto.id}>Añadir al carrito</button>
                             </div>
                             </div>`
      contenedor.append(div)
 
-     let boton = document.getElementById (`boton${producto.id}`)
+     const boton = document.getElementById (`boton${producto.id}`)
 
-     boton.addEventListener("click" , () => {
-        boton.innerHTML =`<div class="modal-dialog modal-sm text-bg-success p-1">
-        <b>Se agrego el producto ${producto.nombre} al carrito.</b>
-        </div>`  
-     })
+     boton.addEventListener('click', () => {
+        carrito(producto.id)
+        alert(`Se agrego el producto ${producto.nombre} al carrito.`)
+     });
 };
 
