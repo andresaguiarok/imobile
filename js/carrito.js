@@ -1,7 +1,7 @@
 //Carrito de la pagina
 const compra = [];
 
-const carrito = (productoId) => {
+let carrito = (productoId) => {
 
     let contenedorProducto = document.getElementById("carrito")
 
@@ -14,13 +14,16 @@ const carrito = (productoId) => {
 
         let div = document.createElement ("div")
         div.innerHTML = `<div class="productoCarrito p-2">  
-                            <h5 class="text-center">Nombre: ${producto.nombre}</h5>
+                            <h5 class="text-center">${producto.nombre}</h5>
                             <img src="${producto.img}" class="rounded mx-auto d-block">
                             <b class="text-center">Precio: ${producto.precio}</b>
                             <p id="cantidad${producto.id}" class="text-center">Cantidad: ${producto.cantidad}</p>
                             <button class="btn btn-danger">Eliminar</button>
                         </div> `
-     contenedorProducto.append(div)                    
+     contenedorProducto.append(div)   
+     
+        localStorage.setItem("compra",JSON.stringify(compra));
     }
     carritoLleno()
+    
 };
