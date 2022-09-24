@@ -1,29 +1,68 @@
 //Carrito de la pagina
-const compra = [];
+const contenedorProducto = document.getElementById("carrito");
+const vaciarCarrito = document.getElementById("botonVaciarCarrito");
+const contadorCarrito = document.getElementById("contadorCarrito");
+const precioTotal = document.getElementById("precioTotal");
+
+let compra = [];
+
+document.addEventListener("DOMContentLoaded" , () => {
+    if (localStorage.getItem("compra")){
+        compra = JSON.parse(localStorage.getItem("compra"))
+        actualizarCarrito()
+    }
+})
+
+vaciarCarrito.addEventListener ("click", () => {
+    compra.length = 0
+    actualizarCarrito();
+
+})
 
 let carrito = (productoId) => {
+    const hay = compra.some (producto => producto.id == productoId)
 
-    let contenedorProducto = document.getElementById("carrito")
-
-    const carritoLleno = () => {
+    if (hay){
+        const producto = compra.map (producto => {
+            if (producto.id === productoId){
+                producto.cantidad++
+            }
+        })
+    }else {
         let producto = productos.find (producto => producto.id == productoId)
         compra.push(producto)
-        console.log(compra);
-
-        producto.cantidad = 1
-
-        let div = document.createElement ("div")
-        div.innerHTML = `<div class="productoCarrito p-2">  
-                            <h5 class="text-center">${producto.nombre}</h5>
-                            <img src="${producto.img}" class="rounded mx-auto d-block">
-                            <b class="text-center">Precio: ${producto.precio}</b>
-                            <p id="cantidad${producto.id}" class="text-center">Cantidad: ${producto.cantidad}</p>
-                            <button class="btn btn-danger">Eliminar</button>
-                        </div> `
-     contenedorProducto.append(div)   
-     
-        localStorage.setItem("compra",JSON.stringify(compra));
+        console.log(compra)
     }
-    carritoLleno()
-    
-};
+  actualizarCarrito();  
+}
+
+const eliminarProducto = (productoId) => {
+    let producto = compra.find((producto) => producto.id === productoId)
+    let item = compra.slice(producto)
+    compra.splice(item , 1);
+    actualizarCarrito();
+}
+
+const actualizarCarrito = () => {
+    contenedorProducto.innerHTML = ""
+
+    compra.forEach( (producto) => {
+        let div = document.createElement("div")
+        div.innerHTML = `<table class="table row">
+                              <th id="cantidad" class="col-2">${producto.cantidad}</th>
+                              <td class="col-6">${producto.nombre}</td>
+                              <td class="col-5">${producto.precio}</td>
+                              <td class="col-1"><button onclick ="eliminarProducto(${producto.id})" class="btn btn-danger">x</button></td>
+                         </table>  
+        `
+        contenedorProducto.append(div)
+
+        localStorage.setItem("compra" , JSON.stringify(compra))
+    })
+    contadorCarrito.innerText = compra.length
+    precioTotal.innerText = compra.reduce((acc , producto) => acc + producto.precio, 0)
+}
+
+
+     
+

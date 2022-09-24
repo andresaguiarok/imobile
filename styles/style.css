@@ -128,3 +128,19 @@ header{
 .botoncito {
     text-align: center;
 }
+
+.botonesCarrito {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+}
+
+.table {
+    font-size: 18px;
+}
+
+.precioTotal {
+    font-size: 20px;
+    padding: 10px;
+}
+

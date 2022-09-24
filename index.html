@@ -34,22 +34,38 @@
                     </ul>
                     <form class="d-flex" role="search">
                       <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                      <button class="btn btn-primary buscador" type="submit">Buscar</button>
+                      <button class="btn btn-primary" type="submit">Buscar</button>
                     </form>
                 </div>
             </div>
         </nav>
     </header>
     <section class="carrito fixed-bottom">
-        <button class="btn btn-dark icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./images/iconos/carrito_de_compra.png" alt="carrito_de_compra" srcset=""></button>
+        <button class="btn btn-dark icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./images/iconos/carrito_de_compra.png" alt="carrito_de_compra" srcset="">
+            <span id="contadorCarrito" class="position-absolute translate-middle badge rounded-pill bg-danger">
+                0
+                <span class="visually-hidden"></span>
+              </span>
+        </button>
         <div class="offcanvas offcanvas-end p-1" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
                 <h4 class=" offcanvas-title" id="offcanvasRightLabel">Carrito</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div id="carrito" class="offcanvas-body">
+            <div class="offcanvas-body container-fluid">
+                    <table class="table row">
+                        <th class="col-2">Cant.</th>
+                        <th class="col-6">Producto</th>
+                        <th class="col-5">Precio</th>
+                        <th class="col-1">Eliminar</th>
+                    </table>
+                    <div id="carrito"></div>
             </div>
-            <button class="btn btn-success">Comprar</button>
+            <b class="precioTotal">Precio total: <span id="precioTotal">0</span></b>
+            <div class="botonesCarrito">
+                <button class="btn btn-success">Comprar</button>
+                <button id="botonVaciarCarrito" class="btn btn-danger">Vaciar carrito</button>
+            </div>
         </div>
     </section>
     <section class="contenedor">
