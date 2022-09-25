@@ -6,11 +6,8 @@ const precioTotal = document.getElementById("precioTotal");
 
 let compra = [];
 
-document.addEventListener("DOMContentLoaded" , () => {
-    if (localStorage.getItem("compra")){
-        compra = JSON.parse(localStorage.getItem("compra"))
+document.addEventListener("DOMContentLoaded" , () => { localStorage.getItem("compra") && compra && JSON.parse(localStorage.getItem("compra"))
         actualizarCarrito()
-    }
 })
 
 vaciarCarrito.addEventListener ("click", () => {
@@ -21,25 +18,16 @@ vaciarCarrito.addEventListener ("click", () => {
 
 let carrito = (productoId) => {
     const hay = compra.some (producto => producto.id == productoId)
-
-    if (hay){
-        const producto = compra.map (producto => {
-            if (producto.id === productoId){
-                producto.cantidad++
-            }
-        })
-    }else {
-        let producto = productos.find (producto => producto.id == productoId)
-        compra.push(producto)
-        console.log(compra)
-    }
-  actualizarCarrito();  
+    hay ? producto = compra.map (producto => { producto.id === productoId && producto.cantidad++})
+    : producto = productos.find (producto => {producto.id == productoId && compra.push(producto)}) || console.log(compra)
+    actualizarCarrito();  
 }
 
 const eliminarProducto = (productoId) => {
     let producto = compra.find((producto) => producto.id === productoId)
     let item = compra.slice(producto)
     compra.splice(item , 1);
+    alert("Elimino el producto del carrito")
     actualizarCarrito();
 }
 

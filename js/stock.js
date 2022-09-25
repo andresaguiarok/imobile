@@ -62,3 +62,5 @@ let productos = [
     precio: 410000 ,
     categoria:"SAMSUNG"},
 ]
+
+console.log(... productos);
