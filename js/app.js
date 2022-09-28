@@ -20,7 +20,14 @@ for (let producto of productos) {
 
      boton.addEventListener('click', () => {
         carrito(producto.id)
-        alert(`Se agrego el producto ${producto.nombre} al carrito.`)
+        Toastify({
+            text: `Se agrego el producto ${producto.nombre} al carrito.`,
+            className: "info",
+            duration: "1500",
+            style: {
+              background: "linear-gradient(to right, rgb(1, 13, 27), rgb(20, 80, 148))",
+            }
+        }).showToast();
      });
 };
 

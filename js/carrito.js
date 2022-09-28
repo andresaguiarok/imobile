@@ -12,6 +12,16 @@ document.addEventListener("DOMContentLoaded" , () => { localStorage.getItem("com
 
 vaciarCarrito.addEventListener ("click", () => {
     compra.length = 0
+    Toastify({
+        text: `SE VACIO EL CARRITO`,
+        className: "success",
+        duration: "1500",
+        gravity: "top",
+        position: "left",
+        style: {
+          background: "linear-gradient(to left, rgb(88, 0, 0), rgb(0, 0, 0))",
+        }
+    }).showToast();
     actualizarCarrito();
 
 })
@@ -27,7 +37,16 @@ const eliminarProducto = (productoId) => {
     let producto = compra.find((producto) => producto.id === productoId)
     let item = compra.slice(producto)
     compra.splice(item , 1);
-    alert("Elimino el producto del carrito")
+    Toastify({
+        text: `Se elimino ${producto.nombre} del carrito.`,
+        className: "info",
+        gravity: "top",
+        duration: "1500",
+        style: {
+          background: "rgb(66, 139, 221)",
+          width: "400",
+        }
+    }).showToast();
     actualizarCarrito();
 }
 
