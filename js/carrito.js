@@ -6,20 +6,23 @@ const precioTotal = document.getElementById("precioTotal");
 
 let compra = [];
 
-document.addEventListener("DOMContentLoaded" , () => { localStorage.getItem("compra") && compra && JSON.parse(localStorage.getItem("compra"))
+document.addEventListener("DOMContentLoaded" , () => {
+    if (localStorage.getItem("compra")){
+        compra = JSON.parse(localStorage.getItem("compra"))
         actualizarCarrito()
+    }
 })
 
 vaciarCarrito.addEventListener ("click", () => {
     compra.length = 0
     Toastify({
         text: `SE VACIO EL CARRITO`,
-        className: "success",
+        className: "info",
         duration: "1500",
         gravity: "top",
         position: "left",
         style: {
-          background: "linear-gradient(to left, rgb(88, 0, 0), rgb(0, 0, 0))",
+          background: "linear-gradient(to left, rgb(88, 0, 0), rgb(88, 0, 0) , rgb(0, 0, 0))",
         }
     }).showToast();
     actualizarCarrito();
