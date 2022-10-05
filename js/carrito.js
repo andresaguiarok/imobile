@@ -30,9 +30,9 @@ vaciarCarrito.addEventListener ("click", () => {
 })
 
 let carrito = (productoId) => {
-    const hay = compra.some (producto => producto.id == productoId)
-    hay ? producto = compra.map (producto => { producto.id === productoId && producto.cantidad++})
-    : producto = productos.find (producto => {producto.id == productoId && compra.push(producto)}) || console.log(compra)
+    const hay = compra.some ((producto) => producto.id == productoId)
+    hay ? item = compra.map ((producto) => { producto.id === productoId && producto.cantidad++})
+    : item = prod.find ((producto) => {producto.id == productoId && compra.push(producto)}) || console.log(compra)
     actualizarCarrito();  
 }
 
@@ -73,6 +73,8 @@ const actualizarCarrito = () => {
     contadorCarrito.innerText = compra.length
     precioTotal.innerText = compra.reduce((acc , producto) => acc + producto.cantidad * producto.precio, 0)
 }
+
+
 
 
      

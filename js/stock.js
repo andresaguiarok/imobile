@@ -1,4 +1,4 @@
-let productos = [
+/*let productos = [
     {id: 1,
     cantidad: 1,
     nombre:"IPHONE 11",
@@ -63,4 +63,4 @@ let productos = [
     categoria:"SAMSUNG"},
 ]
 
-console.log(... productos);
+console.log(... productos);*/
