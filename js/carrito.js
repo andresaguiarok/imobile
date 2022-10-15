@@ -1,11 +1,17 @@
 //Carrito de la pagina
+
+//Constantes
 const contenedorProducto = document.getElementById("carrito");
 const vaciarCarrito = document.getElementById("botonVaciarCarrito");
 const contadorCarrito = document.getElementById("contadorCarrito");
 const precioTotal = document.getElementById("precioTotal");
+const botonComprar = document.getElementById ("botonComprar");
+const carro = document.getElementById ("carritoDeCompra");
 
+//Array
 let compra = [];
 
+//Se guarda los articulos en el localStorage
 document.addEventListener("DOMContentLoaded" , () => {
     if (localStorage.getItem("compra")){
         compra = JSON.parse(localStorage.getItem("compra"))
@@ -13,11 +19,23 @@ document.addEventListener("DOMContentLoaded" , () => {
     }
 })
 
+//boton que simula una compra exitosa
+botonComprar.addEventListener ("click", () => {
+    Toastify({
+        text: `SU COMPRA SE A REALIZADO CON EXITO`,
+        duration: "1500",
+        position: "center",
+        style: {
+          background: "rgb(0, 90, 0)",
+        }
+    }).showToast();
+})
+
+//boton que vacia el carrito de compras
 vaciarCarrito.addEventListener ("click", () => {
     compra.length = 0
     Toastify({
         text: `SE VACIO EL CARRITO`,
-        className: "info",
         duration: "1500",
         gravity: "top",
         position: "left",
@@ -29,13 +47,17 @@ vaciarCarrito.addEventListener ("click", () => {
 
 })
 
+//Carrito
 let carrito = (productoId) => {
+    //Con some busca si existe el articulo dentro del array Compra
     const hay = compra.some ((producto) => producto.id == productoId)
+    //Mapea el objeto existente y le suma la cantidad del articulo y lo pushea al array 
     hay ? item = compra.map ((producto) => { producto.id === productoId && producto.cantidad++})
-    : item = prod.find ((producto) => {producto.id == productoId && compra.push(producto)}) || console.log(compra)
+    : item = prod.find ((producto) => {producto.id == productoId && compra.push(producto)})
     actualizarCarrito();  
 }
 
+//Elimina el producto seleccionado del carrito
 const eliminarProducto = (productoId) => {
     let producto = compra.find((producto) => producto.id === productoId)
     let item = compra.slice(producto)
@@ -53,6 +75,7 @@ const eliminarProducto = (productoId) => {
     actualizarCarrito();
 }
 
+//Al seleccionar el articulo se suma al carrito y se actualiza
 const actualizarCarrito = () => {
     contenedorProducto.innerHTML = ""
 
@@ -69,11 +92,13 @@ const actualizarCarrito = () => {
 
         localStorage.setItem("compra" , JSON.stringify(compra))
     })
-    
-    contadorCarrito.innerText = compra.length
-    precioTotal.innerText = compra.reduce((acc , producto) => acc + producto.cantidad * producto.precio, 0)
-}
 
+    //Lleva la cantidad de prodcutos seleccionados en el carrito
+    contadorCarrito.innerText = compra.length
+
+    //Suma el precio de todos los productos y muestra el total de la suma
+    precioTotal.innerText = compra.reduce((acc , producto) => acc + producto.cantidad * producto.precio, 0)
+};
 
 
 

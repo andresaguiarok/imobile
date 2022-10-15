@@ -15,34 +15,10 @@
     <title>Imobile</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-light menu container-fluid">
-            <div class="container-fluid">
-                <div class="navbar-brand" href="#">
-                    <img src="./images/logos_sitio/logo_imobile.png" alt="Logo del sitio" class="logoNav">
-                </div>
-                <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon "></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./index.html">Tienda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                      <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                      <button class="btn btn-primary" type="submit">Buscar</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+    <header id="navbar">    
     </header>
-    <section class="carrito fixed-bottom">
-        <button class="btn btn-dark icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./images/iconos/carrito_de_compra.png" alt="carrito_de_compra" srcset="">
+    <section id="carritoDeCompra" class="carrito fixed-bottom">
+        <button class="btn btn-dark icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./images/iconos/carrito_de_compra.png" alt="carrito_de_compra">
             <span id="contadorCarrito" class="position-absolute translate-middle badge rounded-pill bg-danger">
                 0
                 <span class="visually-hidden"></span>
@@ -64,7 +40,7 @@
             </div>
             <b class="precioTotal">Precio total: <span id="precioTotal">0</span></b>
             <div class="botonesCarrito">
-                <button class="btn btn-success">Comprar</button>
+                <button id="botonComprar" class="btn btn-success">Comprar</button>
                 <button id="botonVaciarCarrito" class="btn btn-danger">Vaciar carrito</button>
             </div>
         </div>
@@ -72,16 +48,7 @@
     <section class="contenedor">
         <div id="tienda" class="tienda"></div> 
     </section>
-    <footer class="pie container-fluid">
-        <dic class="redesFace">
-            <a href="https://www.facebook.com/"><img src="./images/logos_redes_sociales/facebook_logo.png" alt="logo de facebook"></a>
-        </dic>
-        <div class="logo">
-            <img src="./images/logos_sitio/logo_imobile.png" alt="logo de sitio"> 
-        </div>
-        <dic class="redesInsta">
-            <a href="https://www.instagram.com/"><img src="./images/logos_redes_sociales/instagram_logo.png" alt="logo de instagram"></a>
-        </dic>
+    <footer id="pieDePagina" class="pie container-fluid"> 
     </footer>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
