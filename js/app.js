@@ -80,9 +80,9 @@ navbar.appendChild(nav);
 
 //Nodo del footer
 let div = document.createElement ("div")
-div.className = ("pie")
+div.className = ("container-fluid")
 
-div.innerHTML = `<div class="row">
+div.innerHTML = `<div class="row pie">
                  <div class="text-center">
                      <img src="./images/logos_sitio/logo_imobile.png" alt="logo del site" class="logo">
                  </div>
