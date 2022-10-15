@@ -80,7 +80,7 @@ navbar.appendChild(nav);
 
 //Nodo del footer
 let div = document.createElement ("div")
-
+div.className = ("pie container-fluid")
 
 div.innerHTML = `<div class="row">
                  <div class="text-center">
