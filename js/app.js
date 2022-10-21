@@ -70,10 +70,6 @@ nav.innerHTML = `
                                     <a class="nav-link" href="./pages/contacto.html">Contacto</a>
                                 </li>
                             </ul>
-                            <form class="d-flex" role="search">
-                              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                              <button class="btn btn-primary" type="submit">Buscar</button>
-                            </form>
                         </div>
                     </div>`
 navbar.appendChild(nav);

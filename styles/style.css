@@ -148,6 +148,10 @@ header{
     padding: 20px;
 }
 
+.form-floating{
+    margin-top: 25px;
+}
+
 .botones {
-    padding-top: 5px;
+    padding-top: 8px;
 }
