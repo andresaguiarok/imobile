@@ -9,6 +9,7 @@ let prod = [];
 
 //Fetch , simulamos una api usando un archivo Json y traemos los datos 
 let traerDatos = async () => {
+   try {
     let response = await fetch("./data.json");
     let data = await response.json();
     let productos = data;
@@ -45,6 +46,9 @@ let traerDatos = async () => {
             }).showToast();
         });
     });
+   }catch (error){
+    console.log(error);
+   }
 }
 
 traerDatos();
